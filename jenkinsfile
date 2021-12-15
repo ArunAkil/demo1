@@ -1,0 +1,29 @@
+pipeline
+agent any
+stages{
+    stage('git repo'){
+        steps{
+            bat "git clone https://github.com/ArunAkil/demo1.git"
+        }
+    }
+    stage('build'){
+        steps{
+            bat "build -f demo1"
+        }
+    }
+    stage('test'){
+        steps{
+            bat "test -f demo1"
+        }
+    }
+    stage('deploy'){
+        steps{
+            bat "deploy -f demo1"
+        }
+    }
+    stage('release'){
+        steps{
+            bat "release -f demo1"
+        }
+    }
+}
